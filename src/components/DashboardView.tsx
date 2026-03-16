@@ -2,7 +2,7 @@ import { ShieldCheck, ShieldOff, Ban, AlertTriangle, Eye, Clock } from "lucide-r
 import { motion } from "framer-motion";
 import { ShieldIcon } from "./ShieldIcon";
 import { StatusCard } from "./StatusCard";
-import { useSettings, useBlockedDomains, useActivityLog } from "@/src/lib/store";
+import { useSettings, useBlockedDomains, useActivityLog } from "@/lib/store";
 
 export function DashboardView() {
   const { settings, updateSettings } = useSettings();

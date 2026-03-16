@@ -1,4 +1,4 @@
-import { useSettings } from "@/src/lib/store";
+import { useSettings } from "@/lib/store";
 import { Bell, BellOff, Mail, Phone, User } from "lucide-react";
 import { motion } from "framer-motion";
 import { toast } from "sonner";

@@ -1,4 +1,4 @@
-import { useSettings } from "@/src/lib/store";
+import { useSettings } from "@/lib/store";
 import { motion } from "framer-motion";
 import { Shield, Search, Scan } from "lucide-react";
 

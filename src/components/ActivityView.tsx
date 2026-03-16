@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useActivityLog } from "@/src/lib/store";
+import { useActivityLog } from "@/lib/store";
 import { Filter } from "lucide-react";
 import { useState } from "react";
 

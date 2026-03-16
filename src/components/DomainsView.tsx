@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useBlockedDomains } from "@/src/lib/store";
+import { useBlockedDomains } from "@/lib/store";
 import { Plus, Trash2, Globe } from "lucide-react";
 
 export function DomainsView() {

@@ -16,6 +16,8 @@ const navItems = [
 ];
 
 export function Sidebar({ activeTab, onTabChange }: SidebarProps) {
+  const { signOut, user } = useAuth();
+
   return (
     <aside className="w-64 border-r border-border bg-card flex flex-col h-screen sticky top-0 shrink-0">
       <div className="p-6 flex items-center gap-3">
@@ -49,12 +51,21 @@ export function Sidebar({ activeTab, onTabChange }: SidebarProps) {
         ))}
       </nav>
 
-      <div className="p-4 mx-3 mb-4 rounded-lg bg-secondary/50 border border-border">
-        <p className="text-xs text-muted-foreground">Protection Status</p>
-        <div className="flex items-center gap-2 mt-1">
-          <div className="w-2 h-2 rounded-full bg-success animate-pulse" />
-          <span className="text-sm font-medium text-success">Active</span>
+      <div className="px-3 mb-2">
+        <div className="p-4 rounded-lg bg-secondary/50 border border-border">
+          <p className="text-xs text-muted-foreground">Signed in as</p>
+          <p className="text-xs font-medium truncate mt-0.5">{user?.email}</p>
         </div>
+      </div>
+
+      <div className="px-3 mb-4">
+        <button
+          onClick={signOut}
+          className="w-full flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors"
+        >
+          <LogOut size={18} />
+          Sign Out
+        </button>
       </div>
     </aside>
   );

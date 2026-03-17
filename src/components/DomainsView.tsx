@@ -18,7 +18,6 @@ export function DomainsView() {
     <div className="p-8 max-w-4xl mx-auto space-y-6">
       <h2 className="text-2xl font-bold font-[family-name:var(--font-display)]">Blocked Sites</h2>
 
-      {/* Add domain */}
       <div className="flex gap-3">
         <div className="flex-1 relative">
           <Globe size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
@@ -50,12 +49,11 @@ export function DomainsView() {
         </button>
       </div>
 
-      {/* Domains list */}
       <div className="rounded-xl border border-border bg-card overflow-hidden">
         <AnimatePresence mode="popLayout">
           {domains.map((d) => (
             <motion.div
-              key={d.domain}
+              key={d.id}
               layout
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
@@ -72,7 +70,7 @@ export function DomainsView() {
                 </div>
               </div>
               <button
-                onClick={() => removeDomain(d.domain)}
+                onClick={() => removeDomain(d.id)}
                 className="p-2 rounded-lg text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors"
               >
                 <Trash2 size={16} />

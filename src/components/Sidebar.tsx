@@ -1,5 +1,6 @@
-import { Shield, LayoutDashboard, Ban, Settings, Activity, Bell } from "lucide-react";
+import { Shield, LayoutDashboard, Ban, Settings, Activity, Bell, LogOut } from "lucide-react";
 import { motion } from "framer-motion";
+import { useAuth } from "@/contexts/AuthContext";
 
 interface SidebarProps {
   activeTab: string;

@@ -14,7 +14,102 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      activity_logs: {
+        Row: {
+          category: string
+          created_at: string
+          domain: string
+          id: string
+          type: string
+          user_id: string
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          domain: string
+          id?: string
+          type: string
+          user_id: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          domain?: string
+          id?: string
+          type?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      blocked_domains: {
+        Row: {
+          added_at: string
+          category: string
+          domain: string
+          id: string
+          user_id: string
+        }
+        Insert: {
+          added_at?: string
+          category?: string
+          domain: string
+          id?: string
+          user_id: string
+        }
+        Update: {
+          added_at?: string
+          category?: string
+          domain?: string
+          id?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      guardian_settings: {
+        Row: {
+          alerts_enabled: boolean
+          created_at: string
+          filter_level: string
+          id: string
+          partner_email: string | null
+          partner_name: string | null
+          partner_phone: string | null
+          protection_enabled: boolean
+          real_time_scanning: boolean
+          safe_search: boolean
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          alerts_enabled?: boolean
+          created_at?: string
+          filter_level?: string
+          id?: string
+          partner_email?: string | null
+          partner_name?: string | null
+          partner_phone?: string | null
+          protection_enabled?: boolean
+          real_time_scanning?: boolean
+          safe_search?: boolean
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          alerts_enabled?: boolean
+          created_at?: string
+          filter_level?: string
+          id?: string
+          partner_email?: string | null
+          partner_name?: string | null
+          partner_phone?: string | null
+          protection_enabled?: boolean
+          real_time_scanning?: boolean
+          safe_search?: boolean
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
